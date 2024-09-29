@@ -1,0 +1,87 @@
+.job-openings-container {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  padding: 2rem;
+}
+
+.job-openings-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.featured-jobs-text {
+  color: #030c52;
+}
+
+.job-openings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+
+.job-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-company-name {
+  font-weight: medium;
+  font-size: 1.25rem;
+}
+
+.job-location {
+  font-size: 0.875rem;
+  color: #999;
+}
+
+.job-card-body {
+  margin-top: 6px;
+}
+
+.job-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.job-description {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.job-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.job-position-badge,
+.job-type-badge,
+.job-salary-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+}
+
+.job-position-badge {
+  color: #3366ff;
+}
+
+.job-type-badge {
+  color: #f83002;
+}
+
+.job-salary-badge {
+  color: #7209b7;
+}

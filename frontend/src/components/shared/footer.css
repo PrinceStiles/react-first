@@ -1,0 +1,44 @@
+.footer {
+  border-top: 1px solid #ddd;
+  padding: 2rem;
+}
+
+.footer-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-info {
+  margin-bottom: 1rem;
+}
+
+.footer-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.footer-copyright {
+  font-size: 0.875rem;
+  color: #999;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  color: #333;
+  transition: color 0.2s ease-in-out;
+}
+
+.social-link:hover {
+  color: #030c52;
+}

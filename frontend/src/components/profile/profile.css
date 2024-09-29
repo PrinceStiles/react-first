@@ -1,0 +1,129 @@
+.user-profile-container {
+  margin: 2rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.user-profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-profile-header .user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-profile-header .user-avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-profile-header .user-name {
+  font-weight: medium;
+  font-size: 1.25rem;
+}
+
+.user-profile-header .user-bio {
+  font-size: 0.875rem;
+}
+
+.user-profile-details {
+  margin-top: 2rem;
+}
+
+.contact-info {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skills-section {
+  margin-top: 1.25rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-badge {
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.no-skills {
+  color: #ccc;
+}
+
+.resume-section {
+  margin-top: 1.25rem;
+}
+
+.resume-label {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.resume-link {
+  display: block;
+  color: #3366ff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.no-resume {
+  color: #ccc;
+}
+
+.applied-jobs {
+  padding: 2rem;
+}
+
+.applied-jobs-heading {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.form-fields {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  grid-gap: 0.5rem;
+}
+
+.form-label {
+  width: 6rem;
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+}
+
+.update-button {
+  width: 100%;
+  margin-top: 1rem;
+}
