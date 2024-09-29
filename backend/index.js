@@ -20,7 +20,13 @@ app.use(cookieParser());
 app.use("/files", express.static("files"));
 app.use(
   cors({
-    origin: ["*", "http://localhost:3000", "http://localhost:3000/"], // Specify allowed origins
+    origin: [
+      "*",
+      "http://localhost:3000",
+      "http://localhost:3000/",
+      "https://react-first-sepia.vercel.app",
+      "https://react-first-sepia.vercel.app/",
+    ], // Specify allowed origins
     credentials: true, // Allow sending cookies in requests
     allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"], // Allow specific methods
