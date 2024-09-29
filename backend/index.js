@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/files", express.static("files"));
 const corsOptions = {
-  origin: "*",
+  origin: "http://localhost:3000/",
   credentials: true,
 };
 
