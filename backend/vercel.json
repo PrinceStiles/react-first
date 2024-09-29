@@ -5,7 +5,7 @@
     {
       "src": "/(.*)",
       "dest": "./index.js",
-      "headers": { "Access-Control-Allow-Origin": "*" }
+      "headers": { "Access-Control-Allow-Origin": "http://localhost:3000" }
     }
   ]
 }
