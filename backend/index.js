@@ -1,6 +1,6 @@
 import express from "express";
 import cookieParser from "cookie-parser";
-import cors from "cors";
+// import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./utils/db.js";
 import userRoute from "./routes/user.route.js";
@@ -18,11 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/files", express.static("files"));
-const corsOptions = {
-  origin: ["http://localhost:3000", "http://localhost:3000/"],
-};
+// const corsOptions = {
+//   origin: ["http://localhost:3000", "http://localhost:3000/"],
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use(
   router.get("/", (req, res) =>
