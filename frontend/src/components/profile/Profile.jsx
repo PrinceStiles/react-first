@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 import { Contact, Mail, Pen } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Label } from "../ui/label";
-import AppliedJobTable from "../AppliedJobTable";
+import AppliedJobTable from "./AppliedJobTable";
 import UpdateProfileDialog from "./UpdateProfileDialog";
 import { useSelector } from "react-redux";
 import useGetAppliedJobs from "@/hooks/useGetAppliedJobs";
@@ -19,7 +19,7 @@ const Profile = () => {
   const { user } = useSelector((store) => store.auth);
 
   return (
-    <div>
+    <div className="container_">
       <Navbar />
       <div className="user-profile-container">
         <div className="user-profile-header">
@@ -71,7 +71,7 @@ const Profile = () => {
           {isResume ? (
             <a
               target="blank"
-              href={`http://localhost:8000/files/${user?.profile?.resume}`}
+              href={`https://jobconnect-cmrp.onrender.com/files/${user?.profile?.resume}`}
               className="resume-link"
             >
               {user?.profile?.resumeOriginalName}
@@ -83,7 +83,6 @@ const Profile = () => {
       </div>
       <div className="applied-jobs">
         <h1 className="applied-jobs-heading">Applied Jobs</h1>
-        {/* Applied Job Table   */}
         <AppliedJobTable />
       </div>
       <UpdateProfileDialog open={open} setOpen={setOpen} />

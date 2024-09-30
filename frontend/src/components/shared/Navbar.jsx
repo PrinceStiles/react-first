@@ -31,6 +31,7 @@ const Navbar = () => {
       toast.error(error.response.data.message);
     }
   };
+
   return (
     <div className="header">
       <div className="header-container">
@@ -40,30 +41,6 @@ const Navbar = () => {
           </h1>
         </div>
         <div className="header-nav">
-          <ul className="nav-links">
-            {user && user.role === "recruiter" ? (
-              <>
-                <li>
-                  <Link to="/admin/companies">Companies</Link>
-                </li>
-                <li>
-                  <Link to="/admin/jobs">Jobs</Link>
-                </li>
-              </>
-            ) : (
-              <>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/jobs">Jobs</Link>
-                </li>
-                <li>
-                  <Link to="/browse">Browse</Link>
-                </li>
-              </>
-            )}
-          </ul>
           {!user ? (
             <div className="login-signup-buttons">
               <Link to="/login">
@@ -98,13 +75,30 @@ const Navbar = () => {
                     </div>
                   </div>
                   <div className="user-actions">
-                    {user && user.role === "seeker" && (
-                      <div className="user-actions-button">
-                        <User2 />
+                    {user && user.role === "seeker" ? (
+                      <>
+                        <div className="user-actions-button">
+                          <User2 />
+                          <Button variant="link">
+                            <Link to="/profile">View Profile</Link>
+                          </Button>
+                        </div>
                         <Button variant="link">
-                          <Link to="/profile">View Profile</Link>
+                          <Link to="/jobs">Jobs</Link>
                         </Button>
-                      </div>
+                        <Button variant="link">
+                          <Link to="/browse">Browse</Link>
+                        </Button>
+                      </>
+                    ) : (
+                      <>
+                        <Button variant="link">
+                          <Link to="/admin/companies">Companies</Link>
+                        </Button>
+                        <Button variant="link">
+                          <Link to="/admin/jobs">Jobs</Link>
+                        </Button>
+                      </>
                     )}
 
                     <div className="user-actions-button">

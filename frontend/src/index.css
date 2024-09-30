@@ -93,3 +93,22 @@
     transform: rotate(360deg);
   }
 }
+
+.container_ {
+  position: relative;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  padding: 0 4rem;
+}
+
+/* Mobile screens (max-width: 767px) */
+@media only screen and (max-width: 767px) {
+  /* Styles for mobile screens */
+  .container_ {
+    max-width: 100%;
+    min-width: 100%;
+    padding: 0 2rem;
+  }
+}

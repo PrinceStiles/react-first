@@ -60,3 +60,28 @@
   border-radius: 0 2rem 2rem 0;
   cursor: pointer;
 }
+
+/* Laptop Styles (Large screens) */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Laptop Styles (Medium screens) */
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+}
+
+/* Tablet Styles (Small screens) */
+@media only screen and (max-width: 767px) {
+  .dream-job-title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .search-bar {
+    display: flex;
+    width: 80%;
+  }
+}
+
+/* Mobile Styles (Extra small screens) */
+@media only screen and (max-width: 479px) {
+}

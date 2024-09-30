@@ -62,7 +62,7 @@ const ApplicantsTable = () => {
                   {item.applicant?.profile?.resume ? (
                     <a
                       className="text-blue-600 cursor-pointer"
-                      href={`http://localhost:8000/files/${item?.applicant?.profile?.resume}`}
+                      href={`https://jobconnect-cmrp.onrender.com/files/${item?.applicant?.profile?.resume}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

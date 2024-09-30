@@ -74,7 +74,7 @@ const JobDescription = () => {
   }, [jobId, dispatch, user?._id]);
 
   return (
-    <>
+    <div className="container_">
       <Navbar />
       <div className="job-details-container">
         <div className="job-details-header">
@@ -141,7 +141,7 @@ const JobDescription = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

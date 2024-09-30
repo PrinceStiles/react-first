@@ -67,7 +67,7 @@ const PostJob = () => {
   };
 
   return (
-    <div>
+    <div className="container_">
       <Navbar />
       <div className="flex items-center justify-center w-screen my-5">
         <form

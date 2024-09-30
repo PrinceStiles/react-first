@@ -1,25 +1,13 @@
 .carousel {
   width: 100%;
-  max-width: 30rem;
+  max-width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   margin: 0 auto;
 }
 
 .carousel-item {
   flex: 1 0 auto;
-}
-
-/* Add media queries for responsive behavior, if needed: */
-
-@media (min-width: 768px) {
-  .carousel-item {
-    /* Adjust width for medium screens */
-    width: 50%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .carousel-item {
-    /* Adjust width for large screens */
-    width: 33.33%;
-  }
 }

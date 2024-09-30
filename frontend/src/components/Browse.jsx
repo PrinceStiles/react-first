@@ -17,7 +17,7 @@ const Browse = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container_">
       <Navbar />
       <div className="job-search-results-container">
         <h1 className="job-search-results-title">

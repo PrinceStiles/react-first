@@ -35,7 +35,7 @@ const Job = ({ job }) => {
           <Button className="company-logo-button" variant="outline" size="icon">
             <Avatar>
               <AvatarImage
-                src={`http://localhost:8000/files/${job?.company?.logo}`}
+                src={`https://jobconnect-cmrp.onrender.com/files/${job?.company?.logo}`}
               />
             </Avatar>
           </Button>

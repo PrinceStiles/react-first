@@ -4,13 +4,13 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .auth-form {
   width: 50%;
   border: 1px solid #ddd;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 1rem;
 }
 
@@ -64,4 +64,26 @@
 .signup-link {
   color: #3b5bdb;
   cursor: pointer;
+}
+
+/* Laptop Styles (Large screens) */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Laptop Styles (Medium screens) */
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+}
+
+/* Tablet Styles (Small screens) */
+@media only screen and (max-width: 767px) {
+  .auth-form {
+    width: 80%;
+  }
+}
+
+/* Mobile Styles (Extra small screens) */
+@media only screen and (max-width: 479px) {
+  .auth-form {
+    width: 100%;
+  }
 }

@@ -27,7 +27,7 @@ const Jobs = () => {
   }, [allJobs, searchedQuery]);
 
   return (
-    <div>
+    <div className="container_">
       <Navbar />
       <div className="job-list-container">
         <div className="job-list-filters">
@@ -37,21 +37,19 @@ const Jobs = () => {
           {filterJobs.length === 0 ? (
             <span className="no-jobs-message">Job not found</span>
           ) : (
-            <div className="job-grid">
-              <ul className="job-list">
-                {filterJobs.map((job) => (
-                  <motion.li
-                    key={job._id}
-                    initial={{ opacity: 0, transform: "translateX(100px)" }}
-                    animate={{ opacity: 1, transform: "translateX(0)" }}
-                    exit={{ opacity: 0, transform: "translateX(-100px)" }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Job job={job} />
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
+            <ul className="job-list">
+              {filterJobs.map((job) => (
+                <motion.li
+                  key={job._id}
+                  initial={{ opacity: 0, transform: "translateX(100px)" }}
+                  animate={{ opacity: 1, transform: "translateX(0)" }}
+                  exit={{ opacity: 0, transform: "translateX(-100px)" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Job job={job} />
+                </motion.li>
+              ))}
+            </ul>
           )}
         </div>
       </div>

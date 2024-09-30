@@ -7,8 +7,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "./ui/table";
-import { Badge } from "./ui/badge";
+} from "../ui/table";
+import { Badge } from "../ui/badge";
 import { useSelector } from "react-redux";
 
 const AppliedJobTable = () => {

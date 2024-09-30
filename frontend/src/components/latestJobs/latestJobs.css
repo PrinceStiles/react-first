@@ -2,7 +2,6 @@
   width: 100%;
   margin: 0 auto;
   margin-top: 4rem;
-  padding: 2rem;
 }
 
 .job-openings-title {
@@ -15,10 +14,11 @@
 }
 
 .job-openings-grid {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin: 2.5rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  margin: 2rem 0;
 }
 
 .job-card {
@@ -84,4 +84,24 @@
 
 .job-salary-badge {
   color: #7209b7;
+}
+
+/* Laptop Styles (Large screens) */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Laptop Styles (Medium screens) */
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+}
+
+/* Tablet Styles (Small screens) */
+@media only screen and (max-width: 767px) {
+  .job-openings-title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+/* Mobile Styles (Extra small screens) */
+@media only screen and (max-width: 479px) {
 }

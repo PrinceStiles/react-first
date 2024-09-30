@@ -54,7 +54,7 @@ const Login = () => {
     }
   }, []);
   return (
-    <div>
+    <div className="container_">
       <Navbar />
       <div className="auth-form-container">
         <form onSubmit={submitHandler} className="auth-form">

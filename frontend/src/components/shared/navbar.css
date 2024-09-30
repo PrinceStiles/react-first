@@ -1,5 +1,5 @@
 .header {
-  background-color: white; /* Equivalent to bg-white */
+  background-color: white;
 }
 
 .header-container {
@@ -7,7 +7,6 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 0 2rem;
   height: 4rem;
 }
 
@@ -51,11 +50,13 @@
 
 .user-avatar {
   cursor: pointer;
+  border: 1px solid #ddd;
 }
 
 .user-popover-content {
   width: 20rem;
-  right: 2rem;
+  position: absolute;
+  right: 0;
 }
 
 .user-details {
@@ -76,6 +77,8 @@
 .user-actions {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   /* gap: 1rem; */
   color: #666;
 }

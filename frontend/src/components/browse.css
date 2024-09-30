@@ -1,16 +1,17 @@
 .job-search-results-container {
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .job-search-results-title {
+  font-size: 1.2rem;
   font-weight: bold;
-  font-size: 1.25rem;
   margin-bottom: 1rem;
 }
 
 .job-search-results-grid {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-gap: 1rem;
 }
