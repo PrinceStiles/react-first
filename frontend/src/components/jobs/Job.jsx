@@ -34,9 +34,7 @@ const Job = ({ job }) => {
         <div className="job-card-company">
           <Button className="company-logo-button" variant="outline" size="icon">
             <Avatar>
-              <AvatarImage
-                src={`https://jobconnect-cmrp.onrender.com/files/${job?.company?.logo}`}
-              />
+              <AvatarImage src={`${job?.company?.logo}`} />
             </Avatar>
           </Button>
           <div className="company-details">

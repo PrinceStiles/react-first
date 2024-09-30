@@ -52,7 +52,7 @@ const CompaniesTable = () => {
               <TableCell>
                 <Avatar>
                   <AvatarImage
-                    src={`https://jobconnect-cmrp.onrender.com/files/${company.logo}`}
+                    src={`${company.logo}`}
                   />
                 </Avatar>
               </TableCell>

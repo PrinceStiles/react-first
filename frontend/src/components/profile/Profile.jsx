@@ -71,7 +71,7 @@ const Profile = () => {
           {isResume ? (
             <a
               target="blank"
-              href={`https://jobconnect-cmrp.onrender.com/files/${user?.profile?.resume}`}
+              href={`${user?.profile?.resume}`}
               className="resume-link"
             >
               {user?.profile?.resumeOriginalName}

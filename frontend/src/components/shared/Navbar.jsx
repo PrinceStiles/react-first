@@ -36,9 +36,11 @@ const Navbar = () => {
     <div className="header">
       <div className="header-container">
         <div>
-          <h1 className="logo-text">
-            Job<span className="logo-highlight">Connect</span>
-          </h1>
+          <Link to={"/"}>
+            <h1 className="logo-text">
+              Job<span className="logo-highlight">Connect</span>
+            </h1>
+          </Link>
         </div>
         <div className="header-nav">
           {!user ? (
