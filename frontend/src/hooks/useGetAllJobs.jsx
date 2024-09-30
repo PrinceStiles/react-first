@@ -1,3 +1,4 @@
+import { getCookie } from "@/lib";
 import { setAllJobs } from "@/redux/jobSlice";
 import { JOB_API_END_POINT } from "@/utils/constant";
 import axios from "axios";
@@ -10,9 +11,16 @@ const useGetAllJobs = () => {
   useEffect(() => {
     const fetchAllJobs = async () => {
       try {
+        // Get the token from cookies
+        const token = getCookie("token");
         const res = await axios.get(
           `${JOB_API_END_POINT}/get?keyword=${searchedQuery}`,
-          { withCredentials: true }
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            withCredentials: true,
+          }
         );
         if (res.data.success) {
           dispatch(setAllJobs(res.data.jobs));

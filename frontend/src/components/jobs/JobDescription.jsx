@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
 import "./jobs.css";
 import Navbar from "../shared/Navbar";
+import { getCookie } from "@/lib";
 
 const JobDescription = () => {
   const { singleJob } = useSelector((store) => store.job);
@@ -26,9 +27,16 @@ const JobDescription = () => {
 
   const applyJobHandler = async () => {
     try {
+      // Get the token from cookies
+      const token = getCookie("token");
       const res = await axios.get(
         `${APPLICATION_API_END_POINT}/apply/${jobId}`,
-        { withCredentials: true }
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        }
       );
 
       if (res.data.success) {
@@ -49,7 +57,12 @@ const JobDescription = () => {
   useEffect(() => {
     const fetchSingleJob = async () => {
       try {
+        // Get the token from cookies
+        const token = getCookie("token");
         const res = await axios.get(`${JOB_API_END_POINT}/get/${jobId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
           withCredentials: true,
         });
         if (res.data.success) {

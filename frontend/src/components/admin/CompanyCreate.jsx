@@ -9,6 +9,7 @@ import { COMPANY_API_END_POINT } from "@/utils/constant";
 import { toast } from "sonner";
 import { useDispatch } from "react-redux";
 import { setSingleCompany } from "@/redux/companySlice";
+import { getCookie } from "@/lib";
 
 const CompanyCreate = () => {
   const navigate = useNavigate();
@@ -16,12 +17,15 @@ const CompanyCreate = () => {
   const dispatch = useDispatch();
   const registerNewCompany = async () => {
     try {
+      // Get the token from cookies
+      const token = getCookie("token");
       const res = await axios.post(
         `${COMPANY_API_END_POINT}/register`,
         { companyName },
         {
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
           withCredentials: true,
         }

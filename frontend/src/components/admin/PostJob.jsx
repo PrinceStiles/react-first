@@ -17,6 +17,7 @@ import { JOB_API_END_POINT } from "@/utils/constant";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
+import { getCookie } from "@/lib";
 
 const PostJob = () => {
   const [input, setInput] = useState({
@@ -49,9 +50,12 @@ const PostJob = () => {
     e.preventDefault();
     try {
       setLoading(true);
+      // Get the token from cookies
+      const token = getCookie("token");
       const res = await axios.post(`${JOB_API_END_POINT}/post`, input, {
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         withCredentials: true,
       });

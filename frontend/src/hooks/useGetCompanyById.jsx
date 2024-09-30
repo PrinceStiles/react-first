@@ -1,3 +1,4 @@
+import { getCookie } from "@/lib";
 import { setSingleCompany } from "@/redux/companySlice";
 import { setAllJobs } from "@/redux/jobSlice";
 import { COMPANY_API_END_POINT, JOB_API_END_POINT } from "@/utils/constant";
@@ -10,9 +11,16 @@ const useGetCompanyById = (companyId) => {
   useEffect(() => {
     const fetchSingleCompany = async () => {
       try {
+        // Get the token from cookies
+        const token = getCookie("token");
         const res = await axios.get(
           `${COMPANY_API_END_POINT}/get/${companyId}`,
-          { withCredentials: true }
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            withCredentials: true,
+          }
         );
         console.log(res.data.company);
         if (res.data.success) {

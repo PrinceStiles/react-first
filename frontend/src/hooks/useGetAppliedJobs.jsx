@@ -1,3 +1,4 @@
+import { getCookie } from "@/lib";
 import { setAllAppliedJobs } from "@/redux/jobSlice";
 import { APPLICATION_API_END_POINT } from "@/utils/constant";
 import axios from "axios";
@@ -10,7 +11,12 @@ const useGetAppliedJobs = () => {
   useEffect(() => {
     const fetchAppliedJobs = async () => {
       try {
+        // Get the token from cookies
+        const token = getCookie("token");
         const res = await axios.get(`${APPLICATION_API_END_POINT}/get`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
           withCredentials: true,
         });
         console.log(res.data);

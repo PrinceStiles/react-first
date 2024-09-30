@@ -6,6 +6,7 @@ import { APPLICATION_API_END_POINT } from "@/utils/constant";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllApplicants } from "@/redux/applicationSlice";
+import { getCookie } from "@/lib";
 
 const Applicants = () => {
   const params = useParams();
@@ -15,9 +16,16 @@ const Applicants = () => {
   useEffect(() => {
     const fetchAllApplicants = async () => {
       try {
+        // Get the token from cookies
+        const token = getCookie("token");
         const res = await axios.get(
           `${APPLICATION_API_END_POINT}/${params.id}/applicants`,
-          { withCredentials: true }
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            withCredentials: true,
+          }
         );
         dispatch(setAllApplicants(res.data.job));
       } catch (error) {

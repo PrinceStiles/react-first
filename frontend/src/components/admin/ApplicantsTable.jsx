@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import { toast } from "sonner";
 import { APPLICATION_API_END_POINT } from "@/utils/constant";
 import axios from "axios";
+import { getCookie } from "@/lib";
 
 const shortlistingStatus = ["Accepted", "Rejected"];
 
@@ -23,10 +24,17 @@ const ApplicantsTable = () => {
   const statusHandler = async (status, id) => {
     console.log("called");
     try {
-      axios.defaults.withCredentials = true;
+      // Get the token from cookies
+      const token = getCookie("token");
       const res = await axios.post(
         `${APPLICATION_API_END_POINT}/status/${id}/update`,
-        { status }
+        { status },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        }
       );
       console.log(res);
       if (res.data.success) {

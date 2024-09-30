@@ -16,6 +16,7 @@ import { USER_API_END_POINT } from "@/utils/constant";
 import { setUser } from "@/redux/authSlice";
 import { toast } from "sonner";
 import "./profile.css";
+import { getCookie } from "@/lib";
 
 const UpdateProfileDialog = ({ open, setOpen }) => {
   const [loading, setLoading] = useState(false);
@@ -53,12 +54,15 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
     }
     try {
       setLoading(true);
+      // Get the token from cookies
+      const token = getCookie("token");
       const res = await axios.post(
         `${USER_API_END_POINT}/profile/update`,
         formData,
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
           },
           withCredentials: true,
         }
@@ -66,7 +70,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
       if (res.data.success) {
         dispatch(setUser(res.data.user));
         toast.success(res.data.message);
-        console.log(res)
+        console.log(res);
       }
     } catch (error) {
       console.log(error);
