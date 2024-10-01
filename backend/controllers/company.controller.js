@@ -32,6 +32,7 @@ export const registerCompany = async (req, res) => {
     console.log(error);
   }
 };
+
 export const getCompany = async (req, res) => {
   try {
     const userId = req.id; // logged in user id
@@ -69,6 +70,7 @@ export const getCompanyById = async (req, res) => {
     console.log(error);
   }
 };
+
 export const updateCompany = async (req, res) => {
   try {
     const { name, description, website, location } = req.body;
@@ -76,7 +78,17 @@ export const updateCompany = async (req, res) => {
     const file = req.file;
     // const fileName = req.file?.filename;
     const fileUri = getDataUri(file);
-    const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
+    // Cloudinary upload and failure check
+    let cloudResponse;
+    try {
+      cloudResponse = await cloudinary.uploader.upload(fileUri.content);
+    } catch (cloudError) {
+      return res.status(500).json({
+        message: "Failed to upload profile photo to Cloudinary.",
+        success: false,
+        error: cloudError.message, // Include cloudinary error details
+      });
+    }
     const logo = cloudResponse.secure_url;
     // const logo = fileName;
 
