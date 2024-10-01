@@ -45,8 +45,8 @@ const AdminJobsTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {filterJobs?.map((job) => (
-            <tr>
+          {filterJobs?.map((job, index) => (
+            <tr key={index}>
               <TableCell>{job?.company?.name}</TableCell>
               <TableCell>{job?.title}</TableCell>
               <TableCell>{job?.createdAt.split("T")[0]}</TableCell>
