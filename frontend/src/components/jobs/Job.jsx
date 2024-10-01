@@ -63,7 +63,7 @@ const Job = ({ job }) => {
           >
             Details
           </Button>
-          <Button className="save-for-later-button">Save For Later</Button>
+          {/* <Button className="save-for-later-button">Save For Later</Button> */}
         </div>
       </div>
     </div>

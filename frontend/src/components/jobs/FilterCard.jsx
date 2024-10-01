@@ -8,15 +8,15 @@ import "./jobs.css";
 const fitlerData = [
   {
     fitlerType: "Location",
-    array: ["Accra", "Tema", "Hyderabad", "Dubai", "Mumbai"],
+    array: ["Accra", "Tema", "Kumasi", "Koforidua", "Ho"],
   },
   {
-    fitlerType: "Industry",
-    array: ["Frontend Developer", "Backend Developer", "FullStack Developer"],
+    fitlerType: "Experience",
+    array: ["1 - 5", "6 - 10", "11 - 20"],
   },
   {
     fitlerType: "Salary",
-    array: ["10-40k", "42-100ghs", "1ghs to 5ghs"],
+    array: ["100 - 1000", "1000 - 5000", "5000 - 10k"],
   },
 ];
 
@@ -26,9 +26,11 @@ const FilterCard = () => {
   const changeHandler = (value) => {
     setSelectedValue(value);
   };
+  
   useEffect(() => {
     dispatch(setSearchedQuery(selectedValue));
   }, [selectedValue]);
+
   return (
     <div className="filter-panel">
       <h1 className="filter-title">Filter Jobs</h1>

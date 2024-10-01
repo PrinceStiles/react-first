@@ -7,7 +7,23 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-info">
             <h2 className="footer-title">Job Connect</h2>
-            <p className="footer-copyright">© 2024 Your Company. All rights reserved.</p>
+            <p className="description">
+              JobConnect is an innovative platform designed to bridge the gap
+              between job seekers and recruiters, providing a seamless experience
+              for both parties. Our platform leverages cutting-edge technology
+              to offer a user-friendly interface where job seekers can easily
+              create profiles, upload resumes, and search for job opportunities
+              that match their skills and interests. Recruiters, on the other
+              hand, benefit from advanced tools that allow them to post job
+              listings, filter candidates, and manage recruitment processes
+              efficiently. With a focus on connecting people with the right
+              opportunities, JobConnect aims to streamline the hiring process,
+              reduce the time spent on job searching, and ensure that recruiters
+              find qualified candidates quickly.
+            </p>
+            <p className="footer-copyright">
+              © 2024 Your Company. All rights reserved.
+            </p>
           </div>
 
           <div className="social-links">
